@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 
 const PdfEditor: React.FC = () => {
+  const [fileName, setFileName] = useState<string | null>(null);
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [subject, setSubject] = useState("");
@@ -19,6 +20,7 @@ const PdfEditor: React.FC = () => {
   const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
+      setFileName(file.name);
       const reader = new FileReader();
       reader.onloadend = async () => {
         const result = reader.result as ArrayBuffer;
@@ -48,32 +50,6 @@ const PdfEditor: React.FC = () => {
     }
   };
 
-  //   const handleTitleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setTitle(event.target.value);
-  //     setModifyDate(new Date());
-  //   };
-
-  //   const handleAuthorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setAuthor(event.target.value);
-  //     setModifyDate(new Date());
-  //   };
-
-  //   const handleSubjectChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setSubject(event.target.value);
-  //     setModifyDate(new Date());
-  //   };
-
-  //   const handleKeywordsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setKeywords([event.target.value]);
-  //     setModifyDate(new Date());
-  //   };
-
-  //   const setCustomDates = () => {
-  //     // Set specific custom dates
-  //     setCreationDate(new Date("2022-01-01T00:00:00Z"));
-  //     setModifyDate(new Date("2022-02-01T12:30:00Z"));
-  //   };
-
   async function updateMetadata(
     arrayBuffer: ArrayBuffer,
     title: string,
@@ -94,7 +70,13 @@ const PdfEditor: React.FC = () => {
     pdfDoc.setKeywords(keywords.split(", "));
     pdfDoc.setProducer(producer);
     pdfDoc.setCreationDate(new Date(creationDate));
-    pdfDoc.setModificationDate(new Date(modificationDate));
+    let modDate;
+try {
+  modDate = pdfDoc.getModificationDate()?.toISOString();
+} catch (error) {
+  console.error('Failed to get modification date:', error);
+}
+setModificationDate(modDate || "");
 
     const pdfBytes = await pdfDoc.save();
 
@@ -120,9 +102,9 @@ const PdfEditor: React.FC = () => {
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
-      const fileName = prompt("Enter a name for the PDF file", "updated.pdf");
-      if (fileName !== null) {
-        link.download = fileName;
+      const fileNameToSave = fileName?.replace(".pdf", "") + ".pdf";
+      if (fileNameToSave !== null) {
+        link.download = fileNameToSave;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -216,51 +198,7 @@ const PdfEditor: React.FC = () => {
       </div>
     </div>
 
-    // <div>
-    //   <h1>PDF Metadata Editor</h1>
-    //   <Input type="file" accept=".pdf" onChange={handleFileChange} />
-    //   {metadata && (
-    //     <div>
-    //       <label htmlFor="title">Title:</label>
-    //       <Input
-    //         type="text"
-    //         id="title"
-    //         value={title}
-    //         onChange={handleTitleChange}
-    //       />
-
-    //       <label htmlFor="author">Author:</label>
-    //       <Input
-    //         type="text"
-    //         id="author"
-    //         value={author}
-    //         onChange={handleAuthorChange}
-    //       />
-
-    //       <label htmlFor="subject">Subject:</label>
-    //       <Input
-    //         type="text"
-    //         id="subject"
-    //         value={subject}
-    //         onChange={handleSubjectChange}
-    //       />
-
-    //       {/* Adjusted keywords input */}
-    //       <label htmlFor="keywords">Keywords:</label>
-    //       <Input
-    //         type="text"
-    //         id="keywords"
-    //         value={keywords[0] || ""}
-    //         onChange={handleKeywordsChange}
-    //       />
-
-    //       {/* Button to set custom dates */}
-    //       <Button onClick={setCustomDates}>Set Custom Dates</Button>
-
-    //       <Button onClick={saveChanges}>Save Changes</Button>
-    //     </div>
-    //   )}
-    // </div>
+  
   );
 };
 
