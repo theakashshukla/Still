@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Quest",
+  name: "Still Tools",
   description:
-    "A Quest Learning Platform for Students and Teachers Create Quizz Competition and Learn Together",
+    "A collection of tools to help you stay productive and focused on the things that matter.",
   mainNav: [
     // {
     //   title: "Home",
@@ -20,7 +20,6 @@ export const siteConfig = {
   ],
   links: {
     twitter: "https://twitter.com/theskaai",
-    github: "https://github.com/theakashshukla",
     docs: "#",
   },
 };
