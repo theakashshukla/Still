@@ -1,17 +1,18 @@
 import "./globals.css";
 import type { Metadata } from "next";
-
 import { siteConfig } from "@/config/site"
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
-
+import { SiteFooter } from "@/components/site-footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
     template: `%s - ${siteConfig.name}`,
@@ -26,33 +27,33 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    site: "@astreak.oi",
+    creator: "@theskaai",
+    card: "summary_large_image",
+  },
 };
+
 
 interface RootLayoutProps {
   children: React.ReactNode
 }
-
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang="en">
-//       <body className={inter.className}>
-//         <ThemeProvider
-//           attribute="class"
-//           defaultTheme="dark"
-//           enableSystem
-//           disableTransitionOnChange
-//         >
-//           {children}
-//         </ThemeProvider>
-//       </body>
-//     </html>
-//   );
-// }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
               <div className="flex-1">{children}</div>
+              <SiteFooter/>
             </div>
             <TailwindIndicator />
           </ThemeProvider>
