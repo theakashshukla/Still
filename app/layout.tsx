@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { SiteFooter } from "@/components/site-footer";
+import { BgBlur } from "@/components/style/bg-blur";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +19,6 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
   openGraph: {
     type: "website",
     locale: "en_IN",
@@ -69,8 +61,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-              <div className="flex-1">{children}</div>
-              <SiteFooter/>
+            <div className="flex-1">{children}</div>
+            <BgBlur/>
+            <SiteFooter />
             </div>
             <TailwindIndicator />
           </ThemeProvider>

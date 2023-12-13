@@ -1,17 +1,17 @@
 export function SiteFooter() {
   return (
-    <footer className="p-4 bg-white md:p-8 lg:p-10 dark:bg-gray-800">
+    <footer className="p-4  md:p-8 lg:p-10">
       <div className="mx-auto max-w-screen-xl text-center">
         <a
           href="#"
-          className="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white"
+          className="flex justify-center items-center text-2xl font-semibold "
         >
           Still Tools
         </a>
         <p className="my-6 text-gray-500 dark:text-gray-400">
-          Open-source library of over Many Tools
+          Open-source library of free tools for developers and designers.
         </p>
-        <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
+        <ul className="flex flex-wrap justify-center items-center mb-6 ">
           <li>
             <a href="#" className="mr-4 hover:underline md:mr-6 ">
               About
@@ -28,10 +28,10 @@ export function SiteFooter() {
             </a>
           </li>
         </ul>
-        <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <span className="text-sm ">
           © 2024{" "}
           <a href="#" className="hover:underline">
-            Flowbite™
+            Still
           </a>
           . All Rights Reserved.
         </span>

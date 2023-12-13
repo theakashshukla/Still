@@ -2,7 +2,8 @@ import {
   LucideProps,
   Moon,
   SunMedium,
-  Twitter,
+  CheckCircle2,
+  ArrowUpRight,
   LucideIcon,
 } from "lucide-react";
 
@@ -11,6 +12,9 @@ export type Icon = LucideIcon;
 export const Icons = {
   sun: SunMedium,
   moon: Moon,
+  check: CheckCircle2,
+  arrowUpRight: ArrowUpRight,
+
   
   twitter: ({ ...props }: LucideProps) => (
     <svg

@@ -1,10 +1,10 @@
-import PdfEditor from "@/components/pdf-editor";
-
+import { SearchTool } from "@/components/search-tool";
 
 export default function Home() {
   return (
-    <main className="flex justify-center m-2">
-      <PdfEditor />
+    <main>
+      
+      <SearchTool/>
     </main>
   );
 }
