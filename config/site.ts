@@ -5,7 +5,7 @@ export const siteConfig = {
   title: "Still Tools",
   description:
     "A collection of tools to help you stay productive and focused on the things that matter.",
-  url: "https://still.tools",
+  url: "https://still.astreak.in",
   mainNav: [
     // {
     //   title: "Home",
@@ -21,7 +21,7 @@ export const siteConfig = {
     // },
   ],
   links: {
-    twitter: "https://twitter.com/theskaai",
+    twitter: "https://twitter.com/astreakOfficial",
     docs: "#",
   },
 };
