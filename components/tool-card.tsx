@@ -7,7 +7,7 @@ interface ToolCardProps {
   }
   
 export function ToolCard({ searchQuery }: ToolCardProps) {
-    const filteredTools = tools.filter((tool) =>
+    const filteredTools = tools.filter((tool) => tool.isActive &&
     tool.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 

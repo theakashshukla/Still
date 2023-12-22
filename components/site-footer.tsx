@@ -3,7 +3,7 @@ export function SiteFooter() {
     <footer className="p-4  md:p-8 lg:p-10">
       <div className="mx-auto max-w-screen-xl text-center">
         <a
-          href="#"
+          href="/"
           className="flex justify-center items-center text-2xl font-semibold "
         >
           Still Tools
@@ -13,17 +13,17 @@ export function SiteFooter() {
         </p>
         <ul className="flex flex-wrap justify-center items-center mb-6 ">
           <li>
-            <a href="#" className="mr-4 hover:underline md:mr-6 ">
+            <a href="https://astreak.in/about" className="mr-4 hover:underline md:mr-6 ">
               About
             </a>
           </li>
           <li>
-            <a href="#" className="mr-4 hover:underline md:mr-6">
+            <a href="https://astreak.in/" className="mr-4 hover:underline md:mr-6">
               FAQs
             </a>
           </li>
           <li>
-            <a href="#" className="mr-4 hover:underline md:mr-6">
+            <a href="https://astreak.in/" className="mr-4 hover:underline md:mr-6">
               Contact
             </a>
           </li>
