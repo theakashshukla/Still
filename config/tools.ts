@@ -1,16 +1,16 @@
 export const tools = [
   {
-    name: "Startup Name",
-    description: "Generate a startup name",
-    icon: "time",
-    url: "https://phec.astreak.in/startup-name",
-    isActive: true,
-  },
-  {
     name: "Idea Validate",
     description: "Validate your idea with AI",
     icon: "date",
     url: "https://phec.astreak.in/",
+    isActive: true,
+  },
+  {
+    name: "Startup Name AI",
+    description: "Generate a startup name",
+    icon: "time",
+    url: "https://phec.astreak.in/name-ai",
     isActive: true,
   },
   {
