@@ -5,8 +5,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: "https://still.astreak.in/",
       lastModified: new Date(),
-      changeFrequency: "daily",
+      changeFrequency: "always",
       priority: 1,
     },
+    
   ];
 }
