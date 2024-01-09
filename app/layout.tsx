@@ -1,18 +1,17 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { siteConfig } from "@/config/site"
+import { siteConfig } from "@/config/site";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { cn } from "@/lib/utils"
-import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { cn } from "@/lib/utils";
+import { SiteHeader } from "@/components/site-header";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { SiteFooter } from "@/components/site-footer";
 import { BgBlur } from "@/components/style/bg-blur";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
@@ -42,16 +41,20 @@ export const metadata: Metadata = {
   },
 };
 
-
 interface RootLayoutProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head />
+        <head>
+          <meta
+            name="google-site-verification"
+            content="cSK6C5BfCiu_KaOhLptoPI88uBhKnHUvAOB7WPGrnbM"
+          />
+        </head>
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
@@ -61,14 +64,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="relative flex min-h-screen flex-col">
               <SiteHeader />
-            <div className="flex-1">{children}</div>
-            <BgBlur/>
-            <SiteFooter />
+              <div className="flex-1">{children}</div>
+              <BgBlur />
+              <SiteFooter />
             </div>
             <TailwindIndicator />
           </ThemeProvider>
         </body>
       </html>
     </>
-  )
+  );
 }
