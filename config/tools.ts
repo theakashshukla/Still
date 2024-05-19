@@ -14,6 +14,20 @@ export const tools = [
     isActive: true,
   },
   {
+    name: "Text Tools",
+    description: "A collection of text tools",
+    icon: "time",
+    url: "https://stilltool.vercel.app/",
+    isActive: true,
+  },
+  {
+    name: "Ether Wallet",
+    description: "Explore an Ethereum wallet & transactions",
+    icon: "time",
+    url: "https://ether-explorer-mu.vercel.app/",
+    isActive: true,
+  },
+  {
     name: "Epoch",
     description: "Convert epoch time to a date",
     icon: "epoch",
