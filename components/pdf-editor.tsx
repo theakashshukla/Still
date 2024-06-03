@@ -37,14 +37,6 @@ const PdfEditor: React.FC = () => {
         setProducer(pdfDoc.getProducer() || "");
         setCreationDate(pdfDoc.getCreationDate()?.toISOString() || "");
         setModificationDate(pdfDoc.getModificationDate()?.toISOString() || "");
-        console.log("Title:", pdfDoc.getTitle());
-        console.log("Author:", pdfDoc.getAuthor());
-        console.log("Subject:", pdfDoc.getSubject());
-        console.log("Creator:", pdfDoc.getCreator());
-        console.log("Keywords:", pdfDoc.getKeywords());
-        console.log("Producer:", pdfDoc.getProducer());
-        console.log("Creation Date:", pdfDoc.getCreationDate());
-        console.log("Modification Date:", pdfDoc.getModificationDate());
       };
       reader.readAsArrayBuffer(file);
     }
@@ -71,12 +63,12 @@ const PdfEditor: React.FC = () => {
     pdfDoc.setProducer(producer);
     pdfDoc.setCreationDate(new Date(creationDate));
     let modDate;
-try {
-  modDate = pdfDoc.getModificationDate()?.toISOString();
-} catch (error) {
-  console.error('Failed to get modification date:', error);
-}
-setModificationDate(modDate || "");
+    try {
+      modDate = pdfDoc.getModificationDate()?.toISOString();
+    } catch (error) {
+      console.error("Failed to get modification date:", error);
+    }
+    setModificationDate(modDate || "");
 
     const pdfBytes = await pdfDoc.save();
 
@@ -113,7 +105,7 @@ setModificationDate(modDate || "");
   };
 
   return (
-    <div className="grid w-[700px] justify-items-center m-5">
+    <div className="grid w-[700px] justify-center m-5">
       <div className="grid w-full max-w-md items-center gap-1.5 my-2">
         <Label htmlFor="file">Select PDF</Label>
         <Input type="file" accept=".pdf" onChange={handleFileChange} />
@@ -197,8 +189,6 @@ setModificationDate(modDate || "");
         <Button onClick={handleSave}>Save</Button>
       </div>
     </div>
-
-  
   );
 };
 
