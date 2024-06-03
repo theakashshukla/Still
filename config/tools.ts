@@ -5,6 +5,8 @@ export const tools = [
     icon: "date",
     url: "https://phec.astreak.in/",
     isActive: true,
+    tags: ["AI", "Startup"],
+    category: "Startup",
   },
   {
     name: "Startup Name AI",
@@ -12,6 +14,8 @@ export const tools = [
     icon: "time",
     url: "https://phec.astreak.in/name-ai",
     isActive: true,
+    tags: ["AI", "Startup"],
+    category: "Startup",
   },
   {
     name: "Text Tools",
@@ -19,6 +23,8 @@ export const tools = [
     icon: "time",
     url: "https://stilltool.vercel.app/",
     isActive: true,
+    tags: ["Text"],
+    category: "Text",
   },
   {
     name: "Ether Wallet",
@@ -26,6 +32,8 @@ export const tools = [
     icon: "time",
     url: "https://ether-explorer-mu.vercel.app/",
     isActive: true,
+    tags: ["Ethereum"],
+    category: "Ethereum",
   },
   {
     name: "Epoch",
@@ -115,7 +123,7 @@ export const tools = [
     name: "PDF",
     description: "Convert a webpage to PDF",
     icon: "pdf",
-    url: "https://still.astreak.in/pdf",
+    url: "/pdf",
     isActive: true,
   },
   {
