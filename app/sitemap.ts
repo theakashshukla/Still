@@ -8,6 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "always",
       priority: 1,
     },
+    {
+      url: "https://still.astreak.in/pdf",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 1,
+    },
+    
     
   ];
 }

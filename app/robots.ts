@@ -8,5 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       disallow: '/private/',
     },
     sitemap: 'https://still.astreak.in/sitemap.xml',
+    host: 'https://still.astreak.in',
   }
 }

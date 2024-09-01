@@ -35,8 +35,8 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    site: "@astreak.oi",
-    creator: "@theskaai",
+    site: siteConfig.url,
+    creator: "@astreakOfficial",
     card: "summary_large_image",
   },
 };
