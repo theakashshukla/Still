@@ -8,6 +8,7 @@ import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { SiteFooter } from "@/components/site-footer";
 import { BgBlur } from "@/components/style/bg-blur";
+import GoogleAnalytics from "@/components/google-analytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,11 +50,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
       <html lang="en" suppressHydrationWarning>
-        <head>
-          <meta
-            name="google-site-verification"
-            content="cSK6C5BfCiu_KaOhLptoPI88uBhKnHUvAOB7WPGrnbM"
-          />
+      <head>
+          {process.env.GOOGLE_ANALYTICS ? (
+            <GoogleAnalytics ga_id={process.env.GOOGLE_ANALYTICS} />
+          ) : null}
         </head>
         <body
           className={cn(
