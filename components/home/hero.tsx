@@ -37,11 +37,11 @@ export function Hero({
               onSubmit={handleSearchSubmit}
               name="search-form"
               method="get"
-              className="relative w-full max-w-[80%]"
+              className="relative w-full  max-w-[80%]"
             >
               <input
                 type="text"
-                className="h-9 w-full border border-solid  bg-gray-100 px-3 py-6 text-sm text-black font-semibold"
+                className="h-9 w-full rounded-full border border-solid  bg-gray-100 px-4 py-6 text-sm text-black font-semibold"
                 placeholder="Search"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -50,7 +50,7 @@ export function Hero({
               <input
                 type="submit"
                 value="Search"
-                className="relative right-0 top-[5px] w-full cursor-pointer bg-slate-900 px-6 py-2 text-center font-semibold text-white sm:absolute sm:right-[5px] sm:w-auto"
+                className="relative rounded-full right-0 top-[5px] w-full cursor-pointer bg-slate-900 px-6 py-2 text-center font-semibold text-white sm:absolute sm:right-[5px] sm:w-auto"
               />
             </form>
           </div>

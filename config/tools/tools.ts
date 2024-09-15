@@ -45,12 +45,12 @@ export const tools = [
   {
     slug: "email-check",
     name: "Email Validate",
-    description: "Validate Email",
+    description: "Validate Email Address",
     icon: "epoch",
     url: "https://still.astreak.in/",
     isActive: true,
     category: "Text",
-    tags: ["Email"],
+    tags: ["Text","Email"],
     action: "emailCheck",
     inputs: [
       {

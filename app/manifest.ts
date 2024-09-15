@@ -1,11 +1,11 @@
+import { siteConfig } from "@/config/site";
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Still",
-    short_name: "still",
-    description:
-      "Transform your business with cutting-edge product engineering, software solutions, SaaS services, and more. Drive efficiency, growth, and success across industries.",
+    name: `${siteConfig.name}`,
+    short_name: `${siteConfig.name}`,
+    description: `${siteConfig.description}`,
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
