@@ -54,12 +54,12 @@ export function ToolCard({ searchQuery }: ToolCardProps) {
           </button>
         ))}
       </div>
-      <section className="p-4 mx-8 min-h-screen">
+      <section className="p-4 mx-14 min-h-screen">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           {filteredItems?.map((tool) => (
             <a
               key={tool.name}
-              href={`${siteConfig.url}/${tool.slug}`}
+              href={tool.slug ? `${siteConfig.url}/${tool.slug}` : tool.url}
               className="flex-col flex items-start justify-between border-2 border-gray-500 rounded-lg dark:border-gray-400  p-8 h-50 transition transform hover:scale-105 "
             >
               <div className="flex-row flex w-full items-center justify-between">
@@ -71,7 +71,7 @@ export function ToolCard({ searchQuery }: ToolCardProps) {
               </div>
               <div className="flex flex-wrap mt-4">
                 {tool.tags?.map((tag) => (<>
-                  <span className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-200 px-2 py-1 rounded-full text-xs mr-2">
+                  <span key={tag} className="bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-gray-200 px-2 py-1 rounded-full text-xs mr-2">
                     {tag}
                   </span>
                 </>) )}

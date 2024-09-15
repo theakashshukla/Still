@@ -65,7 +65,7 @@ export const tools = [
     description: "Build query strings",
     icon: "query-string",
     url: "https://still.astreak.in/query-string-builder",
-    isActive: true,
+    isActive: false,
     action: "buildQueryString",
     inputs: [
       {
@@ -83,7 +83,7 @@ export const tools = [
     description: "Count words in a text",
     icon: "word-counter",
     url: "https://still.astreak.in/word-counter",
-    isActive: true,
+    isActive: false,
     action: "wordCounter",
     inputs: [
       {
@@ -101,7 +101,7 @@ export const tools = [
     description: "Hash you Password",
     icon: "epoch",
     url: "https://still.astreak.in/",
-    isActive: true,
+    isActive: false,
     action: "hashPassword",
     inputs: [
       {
@@ -119,7 +119,7 @@ export const tools = [
     description: "Convert words to numbers",
     icon: "word-to-number",
     url: "https://still.astreak.in/word-to-number",
-    isActive: true,
+    isActive: false,
     action: "wordToNumber",
     inputs: [
       {
@@ -137,7 +137,7 @@ export const tools = [
     description: "Remove spaces from a text",
     icon: "space-remover",
     url: "https://still.astreak.in/space-remover",
-    isActive: true,
+    isActive: false,
     action: "spaceRemover",
     inputs: [
       {
@@ -155,7 +155,7 @@ export const tools = [
     description: "Remove lines from a text",
     icon: "line-remover",
     url: "https://still.astreak.in/line-remover",
-    isActive: true,
+    isActive: false,
     action: "lineRemover",
     inputs: [
       {
@@ -173,7 +173,7 @@ export const tools = [
     description: "Convert numbers to words",
     icon: "number-to-word",
     url: "https://still.astreak.in/number-to-word",
-    isActive: true,
+    isActive: false,
     action: "numberToWord",
     inputs: [
       {
@@ -191,7 +191,7 @@ export const tools = [
     description: "Convert numbers to binary",
     icon: "binary-converter",
     url: "https://still.astreak.in/binary-converter",
-    isActive: true,
+    isActive: false,
     action: "binaryConverter",
     inputs: [
       {
@@ -209,7 +209,7 @@ export const tools = [
     description: "Create a deep clone of an object",
     icon: "deep-clone",
     url: "https://still.astreak.in/deep-clone",
-    isActive: true,
+    isActive: false,
     action: "",
     inputs: [
       {
@@ -227,7 +227,7 @@ export const tools = [
     description: "Merge two objects into one",
     icon: "merge-objects",
     url: "https://still.astreak.in/merge-objects",
-    isActive: true,
+    isActive: false,
     action: "",
     inputs: [
       {
@@ -246,8 +246,6 @@ export const tools = [
       },
     ],
   },
-  
-  
   {
     slug: "regex-check",
     name: "Regex",
@@ -511,7 +509,7 @@ export const tools = [
     description: "Generate a random number",
     icon: "random",
     isActive: true,
-    action: "randomNumber",
+    action: "randomNumberGenerator",
     inputs: [
       { label: "Min", type: "number", name: "min", required: true, key: "min" },
       { label: "Max", type: "number", name: "max", required: true, key: "max" },

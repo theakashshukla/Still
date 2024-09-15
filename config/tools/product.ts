@@ -5,7 +5,7 @@ export const products = [
     icon: "date",
     url: "https://phec.astreak.in/",
     isActive: true,
-    tags: ["AI", "Startup"],
+    tags: ["AI", "Startup", 'Business'],
     category: "Startup",
   },
   {
@@ -14,7 +14,7 @@ export const products = [
     icon: "time",
     url: "https://phec.astreak.in/name-ai",
     isActive: true,
-    tags: ["AI", "Startup"],
+    tags: ["AI", "Startup", 'Business'],
     category: "Startup",
   },
   {
@@ -23,8 +23,8 @@ export const products = [
     icon: "time",
     url: "https://ether-explorer-mu.vercel.app/",
     isActive: true,
-    tags: ["Ethereum"],
-    category: "Ethereum",
+    tags: ["Ethereum", "Blockchain", "Wallet"],
+    category: "Product",
   },
   {
     slug: "",
@@ -35,5 +35,15 @@ export const products = [
     isActive: true,
     tags: ["Text"],
     category: "Text",
+  },
+  {
+    slug: "",
+    name: "Unity",
+    description: "A Package of Unity tools & resources",
+    icon: "time",
+    url: "https://stilltool.vercel.app/",
+    isActive: true,
+    tags: ["Npm", 'Package', 'Tool'],
+    category: "Package",
   },
 ];
