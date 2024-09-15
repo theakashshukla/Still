@@ -11,8 +11,8 @@ export default function ToolPage({ params }: { params: { tool: string } }) {
   const [selectedTool, setSelectedTool] = useState<Tool | null>(null); // Fix the type for selectedTool
   const [inputValues, setInputValues] = useState<InputValues | any>({});
   const [result, setResult] = useState<
-    string | number | boolean | Record<string, string> | number[]
-  >("");
+     any
+  >();
   const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
@@ -98,11 +98,11 @@ export default function ToolPage({ params }: { params: { tool: string } }) {
       </form>
 
       {result && (
-        <div className="flex justify-between items-center px-4 py-2 mt-8 font-mono bg-transparent border rounded border-zinc-600 sm:text-sm text-zinc-100 text-left max-w-3xl mx-auto">
-          <p className="py-4 text-base font-bold bg-gradient-to-t bg-clip-text from-zinc-800/60 to-black dark:bg-gradient-to-t dark:from-zinc-100/60 dark:to-white">
-            {JSON.stringify(result)}
+        <div className="flex justify-between max-h-min items-center px-4 py-2 mt-8 font-mono bg-transparent border rounded border-zinc-600 sm:text-sm text-zinc-100 text-left max-w-3xl mx-auto">
+          <p className="py-4 font-bold text-wrap text-zinc-700 dark:text-zinc-200">
+            {result}
           </p>
-          <CopyToClipboard text={JSON.stringify(result)} />
+          <CopyToClipboard text={result} />
         </div>
       )}
     </div>
