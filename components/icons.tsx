@@ -5,6 +5,7 @@ import {
   CheckCircle2,
   ArrowUpRight,
   LucideIcon,
+  Clipboard,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -14,7 +15,7 @@ export const Icons = {
   moon: Moon,
   check: CheckCircle2,
   arrowUpRight: ArrowUpRight,
-
+  clipboard: Clipboard,
   
   twitter: ({ ...props }: LucideProps) => (
     <svg

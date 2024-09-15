@@ -4,6 +4,7 @@ import { toolActions } from "@/lib/actions/tools";
 import { Icons } from "@/components/icons";
 import { InputValues, Tool } from "@/types/tool";
 import { tools } from "@/config/tools/tools";
+import CopyToClipboard from "@/components/shared/copy-to-clip";
 
 export default function ToolPage({ params }: { params: { tool: string } }) {
   const { tool: toolSlug } = params;
@@ -97,9 +98,11 @@ export default function ToolPage({ params }: { params: { tool: string } }) {
       </form>
 
       {result && (
-        <div>
-          <h2>Result:</h2>
-          <p>{JSON.stringify(result)}</p>
+        <div className="flex justify-between items-center px-4 py-2 mt-8 font-mono bg-transparent border rounded border-zinc-600 sm:text-sm text-zinc-100 text-left max-w-3xl mx-auto">
+          <p className="py-4 text-base font-bold bg-gradient-to-t bg-clip-text from-zinc-800/60 to-black dark:bg-gradient-to-t dark:from-zinc-100/60 dark:to-white">
+            {JSON.stringify(result)}
+          </p>
+          <CopyToClipboard text={JSON.stringify(result)} />
         </div>
       )}
     </div>
