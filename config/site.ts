@@ -5,8 +5,7 @@ export const siteConfig = {
   title: "Still - A Combination of Digital Tools to Stay Productive",
   description:
     "A collection of tools to help you stay productive and focused on the things that matter.",
-  // url: "https://still.astreak.in",
-  url: "http://localhost:3000",
+  url: "https://still.astreak.in",
   mainNav: [
     // {
     //   title: "Home",
